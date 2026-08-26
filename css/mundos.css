@@ -1,0 +1,387 @@
+/* fondo oscuro de espacio para que se vean las estrellas */
+body {
+  background: #05060f;
+}
+
+/* ============ STARFIELD con parallax ============ */
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.stars-layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+}
+
+.stars-layer--far {
+  background-image:
+    radial-gradient(1px 1px at 12px 15px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 45px 80px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 78px 22px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 110px 140px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 150px 60px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 180px 110px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 30px 170px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 95px 190px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 160px 10px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 5px 120px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 130px 35px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 190px 150px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 60px 5px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 105px 95px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 175px 175px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 20px 60px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 85px 150px, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 140px 180px, rgba(255,255,255,0.55), transparent 100%);
+  background-size: 200px 200px;
+}
+
+.stars-layer--mid {
+  background-image:
+    radial-gradient(1.5px 1.5px at 25px 40px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 80px 110px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 140px 60px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 200px 150px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 260px 30px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 35px 200px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 110px 250px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 180px 270px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 250px 200px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 15px 140px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 95px 20px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 220px 90px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 160px 220px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 290px 120px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 60px 270px, rgba(255,255,255,0.75), transparent 100%),
+    radial-gradient(1.5px 1.5px at 240px 260px, rgba(255,255,255,0.75), transparent 100%);
+  background-size: 300px 300px;
+}
+
+.stars-layer--near {
+  background-image:
+    radial-gradient(2px 2px at 40px 60px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 120px 140px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 200px 40px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 280px 180px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 350px 90px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 60px 250px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 150px 320px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 240px 300px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 320px 220px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 20px 180px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 100px 380px, rgba(255,255,255,0.95), transparent 100%),
+    radial-gradient(2px 2px at 380px 340px, rgba(255,255,255,0.95), transparent 100%);
+  background-size: 420px 420px;
+}
+
+/* ============ Intro: elegí tu mundo ============ */
+.mundos-intro {
+  text-align: center;
+  padding: 130px 20px 0;
+}
+
+.mundos-intro__titulo {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #F3D64D;
+  text-shadow: 0 0 12px rgba(243, 214, 77, 0.85), 0 0 30px rgba(120, 197, 213, 0.5);
+}
+
+.mundos-intro__subtitulo {
+  margin: 14px auto 0;
+  max-width: 560px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #78C5D5;
+  text-shadow: 0 0 8px rgba(120, 197, 213, 0.6);
+}
+
+/* contenedor principal */
+#universos-grid {
+  width: min(1320px, 94vw);
+  aspect-ratio: 1320 / 671;
+  background-color: rgba(23, 74, 91, 0.55);
+  border: 6px solid #F3D64D;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 24px;
+  position: relative;
+  margin: 100px auto;
+  box-sizing: border-box;
+  padding: 6px;
+  box-shadow: 0 0 35px #F3D64D;
+}
+
+/* en mobile: 2 columnas x 3 filas en vez de 3x2 */
+@media (max-width: 720px) {
+  #universos-grid {
+    width: min(480px, 94vw);
+    aspect-ratio: auto;
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .planeta1, .planeta2, .planeta3, .planeta4, .planeta5, .planeta6 {
+    width: clamp(80px, 26vw, 160px);
+    height: clamp(80px, 26vw, 160px);
+  }
+}
+
+
+/* celdas invisibles: solo ubican el planeta, sin cuadrado propio */
+.celda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* imagenes dentro de celdas */
+.celda img {
+  width: 360px;
+  height: 260px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.celda img:hover {
+  transform: scale(1.03);
+}
+
+/* PLANETAS */
+
+.planeta1, .planeta2, .planeta3, .planeta4, .planeta5, .planeta6 {
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  width: clamp(70px, 22vw, 250px);
+  height: clamp(70px, 22vw, 250px);
+}
+
+.planeta1:hover, .planeta2:hover, .planeta3:hover,
+.planeta4:hover, .planeta5:hover, .planeta6:hover {
+  transform: rotate(3deg) scale(1.08);
+  filter: brightness(1.35);
+}
+
+.planeta1 {
+   background-image: url("../imgs/planeta1.png");
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -80px -20px 70px 2px rgb(29, 28, 28) inset, 3px 0 20px rgba(0, 66, 15, 0.555);
+    animation: spin 30s linear reverse infinite;
+    transform: rotate(3deg);
+    backface-visibility: hidden;
+}
+
+.planeta2 {
+   background-image: url("../imgs/planeta2.png");
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -80px -20px 70px 2px rgb(29, 28, 28) inset, 3px 0 20px rgba(5, 60, 143, 0.555);
+    animation: spin 30s linear reverse infinite;
+    transform: rotate(3deg);
+    backface-visibility: hidden;
+}
+
+.planeta3 {
+   background-image: url("../imgs/planeta3.png");
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -80px -20px 70px 2px rgb(29, 28, 28) inset, 3px 0 20px rgba(184, 0, 0, 0.555);
+    animation: spin 30s linear reverse infinite;
+    transform: rotate(3deg);
+    backface-visibility: hidden;
+}
+
+.planeta4 {
+   background-image: url("../imgs/planeta4.png");
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -80px -20px 70px 2px rgb(29, 28, 28) inset, 3px 0 20px rgba(206, 182, 138, 0.555);
+    animation: spin 30s linear reverse infinite;
+    transform: rotate(3deg);
+    backface-visibility: hidden;
+}
+
+.planeta5 {
+   background-image: url("../imgs/planeta5.png");
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -80px -20px 70px 2px rgb(29, 28, 28) inset, 3px 0 20px rgba(137, 219, 5, 0.555);
+    animation: spin 30s linear reverse infinite;
+    transform: rotate(3deg);
+    backface-visibility: hidden;
+}
+
+.planeta6 {
+   background-image: url("../imgs/planeta6.png");
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: -80px -20px 70px 2px rgb(29, 28, 28) inset, 3px 0 20px rgba(10, 0, 150, 0.555);
+    animation: spin 30s linear reverse infinite;
+    transform: rotate(3deg);
+    backface-visibility: hidden;
+}
+
+/* overlay general */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(1320px, 94vw);
+  height: min(671px, 86vh);
+  background: linear-gradient(135deg, #78C5D5, #F3D64D, #78C5D5, #F3D64D);
+  background-size: 300% 300%;
+  border: 6px solid #F3D64D;
+  z-index: 999;
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 0 0 35px #F3D64D;
+}
+
+@keyframes overlayGradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* boton de cierre */
+.overlay .close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(23, 74, 91, 0.85);
+  border: 2px solid #F3D64D;
+  border-radius: 50%;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: bold;
+  cursor: pointer;
+  color: #F3D64D;
+  z-index: 1000;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.overlay .close:hover {
+  transform: scale(1.1);
+  background: #174A5B;
+}
+
+/* contenido dentro del overlay */
+.overlay__contenido {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  overflow-y: auto;
+}
+
+.overlay__img {
+  width: 500px;
+  max-width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.overlay__texto {
+  max-width: 600px;
+  color: #174A5B;
+}
+
+.overlay__texto h2 {
+  margin-bottom: 15px;
+  font-size: 60px;
+  font-family: 'Orbitron', 'sans-serif';
+  color: #78C5D5;
+  -webkit-text-stroke: 1px #174A5B;
+}
+
+.overlay__texto p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* ============ Animación de apertura del overlay ============ */
+.overlay.is-open {
+  animation: overlayZoomIn 0.45s cubic-bezier(0.2, 0.9, 0.3, 1) forwards,
+             overlayGradientMove 6s ease infinite;
+}
+
+@keyframes overlayZoomIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.75);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(0);
+  }
+}
+
+.overlay.is-open .overlay__img,
+.overlay.is-open .overlay__texto {
+  opacity: 0;
+  animation: overlayContentIn 0.5s ease forwards;
+}
+
+.overlay.is-open .overlay__img {
+  animation-delay: 0.15s;
+}
+
+.overlay.is-open .overlay__texto {
+  animation-delay: 0.25s;
+}
+
+/* cursor parpadeante mientras se "escribe" el texto */
+.overlay__texto h2.escribiendo::after,
+.overlay__texto p.escribiendo::after {
+  content: '|';
+  margin-left: 2px;
+  animation: cursorBlink 0.8s steps(1) infinite;
+}
+
+@keyframes cursorBlink {
+  50% { opacity: 0; }
+}
+
+@keyframes overlayContentIn {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes spin {
+    100%{background-position: 100%;}}

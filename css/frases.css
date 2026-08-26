@@ -1,0 +1,144 @@
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font: 13px;
+  color: #FFFFFF;
+}
+
+p {
+  margin-top: 30px;
+}
+.cntr {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.cntr .cntr-innr {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+/*** STYLES ***/
+.search {
+  display: inline-block;
+  position: relative;
+  height: 35px;
+  width: 35px;
+  box-sizing: border-box;
+  margin: 0px 8px 7px 0px;
+  padding: 7px 9px 0px 9px;
+  border: 3px solid #FFFFFF;
+  border-radius: 25px;
+  transition: all 200ms ease;
+  cursor: text;
+}
+.search:after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  right: -5px;
+  top: 21px;
+  background: #FFFFFF;
+  border-radius: 3px;
+  transform: rotate(-45deg);
+  transition: all 200ms ease;
+}
+.search.active,
+.search:hover {
+  width: 200px;
+  margin-right: 0px;
+}
+.search.active:after,
+.search:hover:after {
+  height: 0px;
+}
+.search input {
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  font-family: Helvetica;
+  font-size: 15px;
+  color: inherit;
+  background: transparent;
+  outline-width: 0px;
+}
+
+body {
+  height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'sans-serif';
+    background: linear-gradient(to bottom, #19006b, #670897);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #F3D64D;
+}
+/* .....................................HEADER........................................ */
+.header {
+  position:relative;
+   z-index: 100;   
+  top: 60px;
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  width: 1320px;
+  height: 110px;
+  display: flex;
+  padding: 20px;
+  border: 6px solid transparent;
+  border-radius: 0px;
+  background-image: 
+  linear-gradient(#007376, #007376), /* fondo del header */
+  linear-gradient(to right, #78C5D5, #F3D64D); /* borde gradient */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 15px #78C5D5;
+}
+
+/* ....................................FOOTER...................................... */
+.footer {
+width: 100%;
+max-width: 1320px;
+height: 180px;
+background-color: #174A5B;
+border: 6px solid;
+border-image: linear-gradient(to right, #78C5D5, #F3D64D) 1;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 60px;
+box-sizing: border-box;
+margin:0 auto; 
+transition: background-color 0.3s;
+}
+
+
+/* Botón de error */
+.error-footer .boton-error-footer {
+width: 190px;
+height: 135px;
+object-fit: contain;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+
+.error-footer .boton-error-footer:hover {
+transform: scale(1.05);
+}
+
+/* Texto de copyright */
+.texto-footer p {
+color: #F3D64D;
+font-family: 'Poppins', sans-serif;
+font-size: 20px;
+margin: 0;
+text-align: right;
+}
+

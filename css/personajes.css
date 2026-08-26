@@ -1,0 +1,260 @@
+/* PERSONAJES — pantalla "Choose Your Avatar" + selector */
+
+.avatar-pantalla {
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+/* Panel base: mismo bisel que .trussell/.ward de styles.css, con borde y glow neón rosa */
+.avatar-panel {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  padding: 70px 50px;
+  box-sizing: border-box;
+  background: linear-gradient(160deg, #D14B70 0%, #E8703D 55%, #F3A24D 100%);
+  border: 3px solid #FF4FC3;
+  clip-path: polygon(
+    5% 0%, 95% 0%,
+    100% 5%, 100% 95%,
+    95% 100%, 5% 100%,
+    0% 95%, 0% 5%
+  );
+  box-shadow: 0 0 15px 2px rgba(255, 79, 195, 0.6);
+}
+
+/* Glow "por detrás": copia borrosa del mismo bisel, más grande, detrás del panel */
+.avatar-panel::before {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  background: #FF4FC3;
+  clip-path: inherit;
+  filter: blur(50px);
+  opacity: 0.55;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ---------- Pantalla 1: botón Choose Your Avatar ---------- */
+
+.avatar-panel--choose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choose-avatar-btn {
+  display: block;
+  width: min(560px, 100%);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  filter: drop-shadow(0 0 16px rgba(243, 214, 77, 0.65));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.choose-avatar-btn img {
+  width: 100%;
+  display: block;
+}
+
+.choose-avatar-btn:hover,
+.choose-avatar-btn:focus-visible {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 26px rgba(243, 214, 77, 0.95)) drop-shadow(0 0 50px rgba(243, 214, 77, 0.5));
+}
+
+/* ---------- Pantalla 2: selector de avatares ---------- */
+
+/* La proporción real de avatarselect.png (1440x1024) para que las esquinas
+   HUD y el carrusel, posicionados por porcentaje, coincidan siempre */
+.avatar-select-panel {
+  aspect-ratio: 1440 / 1024;
+  padding: 0;
+  overflow: hidden;
+}
+
+.avatar-select-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Ventana del carrusel: encajada entre las cuatro esquinas HUD del overlay */
+.avatar-carousel {
+  position: absolute;
+  left: 42%;
+  top: 19%;
+  width: 46%;
+  height: 62%;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.avatar-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 130px;
+  padding: 0;
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  filter: brightness(3) saturate(0);
+  transition: transform 0.5s cubic-bezier(0.22, 0.9, 0.3, 1), opacity 0.5s ease;
+}
+
+.avatar-card.avatar-card--in {
+  animation: avatarScanIn 0.7s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.avatar-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 79, 195, 0.5));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.avatar-card span {
+  font-family: 'Orbitron', sans-serif;
+  color: #FFF6D8;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 0 8px rgba(255, 79, 195, 0.6);
+}
+
+.avatar-card:hover img,
+.avatar-card:focus-visible img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 20px rgba(255, 79, 195, 0.95)) drop-shadow(0 0 35px rgba(243, 214, 77, 0.6));
+}
+
+/* El personaje centrado = el seleccionado */
+.avatar-card--activo img {
+  filter: drop-shadow(0 0 22px rgba(243, 214, 77, 1)) drop-shadow(0 0 40px rgba(255, 79, 195, 0.85));
+}
+
+.avatar-card--activo span {
+  color: #F3D64D;
+}
+
+@keyframes avatarScanIn {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    filter: brightness(3) saturate(0);
+  }
+  8% {
+    opacity: 1;
+  }
+  16% {
+    opacity: 0.35;
+  }
+  24% {
+    opacity: 1;
+  }
+  55% {
+    clip-path: inset(0 0 0% 0);
+    filter: brightness(1.6) saturate(1.5);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0% 0);
+    filter: brightness(1) saturate(1);
+  }
+}
+
+/* Flechas de navegación del carrusel */
+.carousel-flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 44px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(255, 79, 195, 0.6));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.carousel-flecha img {
+  width: 100%;
+  display: block;
+}
+
+.carousel-flecha:hover,
+.carousel-flecha:focus-visible {
+  filter: drop-shadow(0 0 18px rgba(255, 79, 195, 0.95)) drop-shadow(0 0 30px rgba(243, 214, 77, 0.6));
+}
+
+.carousel-flecha--izq {
+  left: 31%;
+}
+
+.carousel-flecha--der {
+  left: 91%;
+}
+
+.carousel-flecha--izq:hover {
+  transform: translateY(-50%) translateX(-4px);
+}
+
+.carousel-flecha--der:hover {
+  transform: translateY(-50%) translateX(4px);
+}
+
+@media (max-width: 720px) {
+  .avatar-panel {
+    padding: 45px 20px;
+  }
+  .avatar-select-panel {
+    padding: 0;
+  }
+  .avatar-card {
+    width: 90px;
+  }
+  .avatar-card img {
+    width: 76px;
+    height: 76px;
+  }
+  .avatar-card span {
+    font-size: 0.6rem;
+  }
+  .carousel-flecha {
+    width: 30px;
+  }
+  .carousel-flecha--izq {
+    left: 20%;
+  }
+  .carousel-flecha--der {
+    left: 96%;
+  }
+  .avatar-carousel {
+    left: 38%;
+    width: 54%;
+  }
+}

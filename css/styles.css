@@ -1,0 +1,931 @@
+:root {
+/* Colores */
+--color-principal: #007376;
+  --color-secundario: #F3D64D;
+  --color-fondo: linear-gradient(to bottom, #C7579B, #007376);
+  --color-bordes: linear-gradient(to left, #78C5D5, #F3D64D);
+
+/* Tipografias */
+--fuente-principal: 'Poppins', sans-serif;
+--fuente-secundaria: 'Orbitron', sans-serif;
+--fuente-especial: 'cc-pixel-arcade-display', 'sans-serif'
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente-principal);
+    background: linear-gradient(to bottom, #C7579B, #007376);
+    color: #F3D64D;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+
+  .pantalla {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+ .oculto {
+  display: none !important;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+  
+/* .....................................HEADER........................................ */
+  .header {
+    position:relative;
+     z-index: 100;   
+    top: 60px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    width: 100%;
+    max-width: 1320px;
+    height: 110px;
+    display: flex;
+    padding: 20px;
+    border: 6px solid transparent;
+    border-radius: 0px;
+    background-image:
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.18) 0px, rgba(0, 0, 0, 0.18) 1px, transparent 1px, transparent 3px), /* textura tipo CRT, igual al menú pero estática */
+    linear-gradient(165deg, #0a2e38 0%, #007376 55%, #0a2e38 100%), /* mismo degradé del menú */
+    linear-gradient(to right, #78C5D5, #F3D64D); /* borde gradient */
+    background-origin: border-box;
+    background-clip: padding-box, padding-box, border-box;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 15px #78C5D5;
+  }
+
+/* ....................................FOOTER...................................... */
+  .footer {
+  width: 100%;
+  max-width: 1320px;
+  height: 180px;
+  background-color: #174A5B;
+  border: 6px solid;
+  border-image: linear-gradient(to right, #78C5D5, #F3D64D) 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  box-sizing: border-box;
+  margin:0 auto; 
+  transition: background-color 0.3s;
+}
+
+
+/* Botón de error */
+.error-footer .boton-error-footer {
+  width: 190px;
+  height: 135px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.error-footer .boton-error-footer:hover {
+  transform: scale(1.05);
+}
+
+/* Texto de copyright */
+.texto-footer p {
+  color: #F3D64D;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  margin: 0;
+  text-align: right;
+}
+
+ /* .......................................INICIO........................................ */
+ /*primera seccion*/ 
+.fondo-inicio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+  }
+  
+#pantalla-inicio {
+  position: fixed;           
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;            
+  overflow: hidden;          
+}
+
+#pantalla-inicio {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;   
+}
+.boton-comenzar {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #007376;
+    color: white;
+    border: 4px solid #78C5D5;
+    border-radius: 26px;
+    padding: 15px 40px;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif; color: #78C5D5;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 15px #78C5D5;
+  }
+  
+.boton-comenzar:hover {
+    background-color: #174A5B;
+    box-shadow: 0 0 25px 10px #F3D64D;
+    font-family: 'Orbitron', sans-serif; color: #F3D64D;
+
+  }
+
+
+/*segunda seccion*/   
+
+#intro-video {
+  position: fixed;           /* ocupa toda la ventana */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;             /* por encima de todo */
+  overflow: hidden;          /* oculta partes que se salen */
+}
+
+#intro-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;   /* centra el video al escalar */
+}
+  
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.skip-button {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    font-family: 'Poppins', 'sans-serif';
+    color: #fff; 
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    z-index: 1000; /* Asegura que esté por encima del video */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.skip-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo más claro al pasar el ratón */
+    border-color: #f0f0f0;
+}  
+
+/*tercera seccion*/   
+
+.container-intro {
+  height: 100vh;
+  display: grid;  
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+  align-items: center;
+  justify-items: center;
+  perspective: 800px; 
+}
+
+.container-del-container-intro {
+  grid-column: 4 / span 6;
+  text-align: center;
+  transform-style: preserve-3d; /* Permite transformaciones 3D anidadas */
+}
+
+.container-del-container-intro > * {
+  transform-style: preserve-3d; /* También permite transformaciones 3D en hijos */
+  backface-visibility: hidden; /* Oculta la parte trasera cuando rota en 3D */
+  transform-origin: center top; /* El punto de origen de las transformaciones es el centro arriba */
+}
+
+.texto-intro {
+  margin-bottom: 1rem; /* Separación abajo del h1 */
+  font-family: 'Tiny5', sans-serif;
+  font-size: 4.25rem;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px #C7579B;
+}
+
+.subtexto-intro {
+  margin-bottom: 3rem; /* Más separación abajo del h2 */
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.scroll-container-intro {
+  position: relative;
+  height: 300vh;
+}
+
+.video-wrapper-intro {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#video-container-intro {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background-color: var(--color-offblack);
+  position: relative;
+  transition: border-radius 0.3s ease;
+  filter: blur(0px);
+  clip-path: inset(0 0 0 0);
+}
+
+#video-container-intro::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+}
+
+.video-intro {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0; /* Ensure video is below overlays */
+}
+
+.video-overlay-intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-offblack-transparent);
+  color: var(--color-offwhite);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  clip-path: inset(100% 0 0 0);
+  backdrop-filter: blur(8px);
+  z-index: 2; /* Ensure this is above the darkening overlay */
+}
+
+.video-overlay-intro .caption-intro {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  transform: translateY(30px);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.video-overlay-intro .content-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  filter: blur(10px); /* Start with blur */
+  transform: scale(1.1); /* Start slightly zoomed out */
+  opacity: 1; /* Always fully visible */
+}
+
+.video-overlay-intro h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  transform: translateY(30px);
+  text-transform: uppercase;
+}
+
+.video-overlay-intro p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 32ch; /* Narrower width */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  transform: translateY(30px);
+}
+
+.spacer {
+  height: 0;
+}
+
+.contenido-final-intro {
+  padding: 10rem 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.quote-intro {
+  margin-bottom: 3rem;
+  line-height: 1.8;
+  grid-column: 4 / span 6;
+}
+
+.quote-intro p {
+  margin-bottom: 1.5rem;
+  max-width: 32ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divider-intro {
+  width: 1px;
+  height: 80px;
+  background-color: var(--color-offblack);
+  margin: 4rem auto;
+  grid-column: 6 / span 2;
+}
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Barra de escaneo tipo CRT usada en la animación de aparición de las tarjetas */
+.scan-bar {
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: screen;
+}
+
+.trussell {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  height: 775px;
+  margin: 120px auto;                    /* separa del bloque anterior */
+  background: linear-gradient(135deg, rgba(199, 87, 155, 0.55), rgba(243, 214, 77, 0.55), rgba(209, 75, 112, 0.55));
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  border: 6px solid #F3D64D;
+  background-clip: padding-box, border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 15px #F3D64D, 0 0 35px 5px #F3D64D, 0 0 60px 10px rgba(243, 214, 77, 0.6);
+  /* Esquinas biseladas */
+  clip-path: polygon(
+    5% 0%, 95% 0%,
+    100% 5%, 100% 95%,
+    95% 100%, 5% 100%,
+    0% 95%, 0% 5%
+     );
+
+}
+
+.trussell-texto-container {
+  flex: 1 1 50%;
+}
+
+.titulo-trussell {
+  font-family: 'cc-pixel-arcade-display', 'sans-serif' /* fuente al hacer hover */;
+  font-size: 3rem;
+  margin: 0 0 1rem;
+  color: #78C5D5;
+   -webkit-text-stroke: 2px #007376; /* Ancho y color del borde */
+}
+
+.titulo-trussell:hover {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  margin: 0 0 1rem;
+  color: #c60f86;
+  text-transform: uppercase;
+}
+
+.texto-trussell {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #78C5D5;
+}
+
+.texto-trussell :hover {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #174A5B;
+}
+
+.trussell-imagen {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../imgs/trussellnormal.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  width: 600px; 
+  height: 700px; 
+  transition: background-image 0.4s ease-in-out;
+
+}
+
+.trussell-imagen:hover {
+  position: relative;
+  background-image: url("../imgs/trusselldibujo.png");
+}
+
+.trussell-imagen:hover::before, .trussell-imagen:hover::after 
+{
+  content: '';
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; /* Hereda la imagen de fondo del elemento padre */
+    background-size: cover;
+    background-position: center;
+    pointer-events: none; /* Asegura que no interfieran con el hover del elemento principal */
+    opacity: 0; /* Inicialmente invisibles */
+}
+
+.trussell-imagen:hover::before, .trussell-imagen:hover::after 
+{
+   opacity: 1; /* Se hacen visibles al hover */
+    animation: glitchEffect 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; /* Animación de 0.3 segundos */
+}
+
+.trussell-imagen:hover::before  {
+  animation-delay: 0.05s; /* Un ligero retraso para el segundo pseudo-elemento */
+    transform: translate(2px, 2px); /* Desplazamiento inicial */
+}
+
+.trussell-imagen:hover::after {
+  animation-delay: 0.1s; /* Otro ligero retraso */
+    transform: translate(-2px, -2px); /* Otro desplazamiento */
+}
+
+.ward {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  height: 795px;
+  margin: 120px auto;                    /* separa del bloque anterior */
+  background: linear-gradient(135deg, rgba(199, 87, 155, 0.55), rgba(120, 197, 213, 0.55), rgba(209, 75, 112, 0.55));
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  border: 6px solid #78C5D5;
+  background-clip: padding-box, border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 15px #78C5D5, 0 0 35px 5px #78C5D5, 0 0 60px 10px rgba(120, 197, 213, 0.6);
+    /* Esquinas biseladas */
+  clip-path: polygon(
+    5% 0%, 95% 0%,
+    100% 5%, 100% 95%,
+    95% 100%, 5% 100%,
+    0% 95%, 0% 5%
+     );
+}
+
+.ward-texto-container {
+  flex: 1 1 50%;
+}
+
+.titulo-ward {
+  font-family: 'cc-pixel-arcade-display', 'sans-serif' ;
+  color: #F3D64D;
+  -webkit-text-stroke: 2px #c60f86; 
+  font-size: 3rem;
+  margin: 0 0 1rem;
+}
+
+.titulo-ward:hover {
+  font-family: 'Orbitron', sans-serif;
+   color: #c60f86;
+   -webkit-text-stroke: 1px #174A5B; 
+   text-transform: uppercase;
+
+}
+
+.texto-ward {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #F3D64D;
+}
+
+.texto-ward :hover {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #174A5B;
+}
+
+.ward-imagen {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../imgs/wardnormal.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  width: 600px; 
+  height: 700px; 
+  transition: background-image 0.4s ease-in-out;
+}
+
+.ward-imagen:hover {
+  background-image: url("..//imgs/warddibujo.png");
+}
+ 
+
+
+
+/* .....................................PAGINA DE ERROR..................................... */
+  
+.fondo-error {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 0;
+}
+
+.boton-click-aqui {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 26px;
+  padding: 30px 40px;
+  cursor: pointer;
+  font-family: 'cc-pixel-arcade-display', 'sans-serif'; 
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 15px #F3D64D;
+  background-color: #F3D64D;
+  z-index: 1;   /* Asegura que esté por encima */
+}
+
+.boton-click-aqui a {
+  display: inline-block;
+  font-family: 'cc-pixel-arcade-display', 'sans-serif';
+  color: #C7579B;
+   -webkit-text-stroke: 2px #000; 
+  font-size: 30px;
+  text-decoration: none;
+  width: 250px;
+}
+
+.boton-click-aqui:hover {
+  box-shadow: 0 0 25px 10px #c60f86;
+  font-family: 'cc-pixel-arcade-display', 'sans-serif';
+
+}
+
+
+.contenedor-de-imagenes-error {
+  position: relative;  
+  width: 100%;
+  height: 100vh;  
+}
+
+.error-virus {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  transform: translateY(-50%); /* Centrar verticalmente */
+  width: 650px;               
+}
+
+.no-es-broma {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%); /* Centrar en ambas direcciones */
+  width: 700px;
+  z-index: 1; /* Asegura que esté por encima */
+}
+
+/* EPISODIOS */
+
+
+/* CONCEPTOS */
+
+/* UNETE A LA COMUNIDAD*/
+
+/* COMUNIDAD */
+
+
+/* ---------- MEDIA-QUERIES RESPONSIVE ---------- */
+
+/* ███  DESKTOP GRANDE (≥ 1441 px hasta 2560 px)  ███ */
+@media (min-width: 1441px) {
+
+  /* ensanchamos contenedores principales */
+  .header,
+  .footer,
+  .slider,
+  #universos-grid {
+    width: 100%;
+    max-width: 1800px;
+  }
+
+  /* slider más amplio */
+  .slider       { height: 840px; }
+  .viewport     { width: 1700px; }
+  .image-strip  { gap: 30px; }
+  .image-strip img { width: 700px; height: 700px; }
+
+  /* grid de mundos más alto y celdas más grandes */
+  #universos-grid { height: 900px; }
+  .celda img      { width: 480px; height: 340px; }
+
+  /* overlay adaptado */
+  .overlay        { width: 1800px; height: 900px; }
+  .overlay__img   { width: 700px; }
+}
+
+/* ███  TABLET (≤ 1024 px)  ███ */
+@media (max-width: 1024px) {
+
+  .header,
+  .footer,
+  .slider,
+  #universos-grid {
+    width: 90%;
+  }
+
+  .header,
+  .footer {
+    padding: 0 30px;
+  }
+
+  /* slider compacto */
+  .slider           { height: 480px; margin: 60px auto; }
+  .viewport         { width: 100%; }
+  .image-strip      { gap: 10px; }
+  .image-strip img  { width: 300px; height: 300px; }
+
+  /* grid de 2 columnas */
+  #universos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+  }
+  .celda img { width: 100%; height: auto; }
+
+  /* overlay en columna */
+  .overlay              { width: 90%; height: auto; }
+  .overlay__contenido   { flex-direction: column; gap: 20px; }
+  .overlay__img         { width: 100%; max-height: 350px; }
+}
+
+/* ███  MÓVIL (≤ 600 px)  ███ */
+@media (max-width: 600px) {
+
+  .header,
+  .footer,
+  .slider,
+  #universos-grid {
+    width: 100%;
+  }
+
+  .header,
+  .footer {
+    padding: 0 20px;
+    top: 20px;
+  }
+
+  /* botón comenzar más pequeño */
+  .boton-comenzar {
+    font-size: 20px;
+    padding: 12px 30px;
+  }
+
+  /* slider muy compacto */
+  .slider           { height: 320px; margin: 40px 0; }
+  .viewport         { width: 100%; }
+  .image-strip img  { width: 250px; height: 250px; }
+  .nav-button       { font-size: 32px; padding: 6px 12px; }
+
+  /* grid de 1 columna */
+  #universos-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    height: auto;
+    padding: 4px;
+  }
+  .celda img { width: 100%; height: auto; }
+
+  /* overlay aún más flexible */
+  .overlay            { width: 95%; height: auto; padding: 15px; }
+  .overlay__contenido { flex-direction: column; gap: 15px; }
+  .overlay__img       { width: 100%; max-height: 260px; }
+  .overlay .close     { top: 10px; right: 10px; font-size: 28px; }
+}
+
+/* Tablet (≤ 1024 px) */
+@media (max-width: 1024px) {
+  .creadores-intro {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 30px;
+  }
+  .creadores-left-intro,
+  .creadores-right-intro {
+    flex: 1 1 100%;
+  }
+  .titulo-creadores-intro {
+    font-size: 2.2rem;
+  }
+  .texto-creadores-intro {
+    font-size: 1rem;
+  }
+}
+
+/* Móvil (≤ 600 px) */
+@media (max-width: 600px) {
+  .creadores-intro {
+    gap: 20px;
+    padding: 30px 20px;
+  }
+  .titulo-creadores-intro {
+    font-size: 1.8rem;
+  }
+  .texto-creadores-intro {
+    font-size: 0.95rem;
+  }
+  .img-creadores-intro {
+    border-radius: 8px;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .trussell {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .trussell-imagen {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 3 / 4;
+    height: auto;
+    background-image: url("../imgs/trussellnormal.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .trussell-texto-container {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ward {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .ward-imagen {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 3 / 4;
+    height: auto;
+    background-image: url("../imgs/wardnormal.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .ward-texto-container {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+
+/* ................................. KEYFRAMES................................... */
+
+
+/* Keyframes para la animación del glitch */
+@keyframes glitchEffect {
+    0% {
+        transform: translate(0, 0);
+        clip-path: inset(0 0 0 0);
+    }
+    10% {
+        transform: translate(-5px, 5px);
+        clip-path: inset(60% 0 0 0);
+    }
+    20% {
+        transform: translate(5px, -5px);
+        clip-path: inset(0 0 60% 0);
+    }
+    30% {
+        transform: translate(-5px, -5px);
+        clip-path: inset(30% 0 30% 0);
+    }
+    40% {
+        transform: translate(5px, 5px);
+        clip-path: inset(0 0 0 0);
+    }
+    50% {
+        transform: translate(-5px, 5px);
+        clip-path: inset(60% 0 0 0);
+    }
+    60% {
+        transform: translate(5px, -5px);
+        clip-path: inset(0 0 60% 0);
+    }
+    70% {
+        transform: translate(-5px, -5px);
+        clip-path: inset(30% 0 30% 0);
+    }
+    80% {
+        transform: translate(5px, 5px);
+        clip-path: inset(0 0 0 0);
+    }
+    90% {
+        transform: translate(-5px, 5px);
+        clip-path: inset(60% 0 0 0);
+    }
+    100% {
+        transform: translate(0, 0);
+        clip-path: inset(0 0 0 0);
+        opacity: 0; /* Vuelve a ser invisible al final de la animación */
+    }
+}

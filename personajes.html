@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personajes</title>
+     <!-- Fuentes -->
+   <link rel="stylesheet" href="https://use.typekit.net/eoj2jqc.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/menu-hamburguesa.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/personajes.css" />
+</head>
+
+<body>
+    <header class="header">
+            <div class="hamburguesa">
+                <div class="container-menu-hamburguesa" onclick="myFunction(this); openNav()">
+                    <img src="imgs/menu-hamburguesa.png" alt="menu-hamburguesa" height="98px" width="187px"/>
+                </div>
+            </div>
+
+            <nav id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <p class="sidenav-label">SISTEMA // NAVEGACIÓN</p>
+                <a href="index.html">Inicio</a>
+                <a href="episodios.html">Episodios</a>
+                <a href="personajes.html">Personajes</a>
+                <a href="mundos.html">Mundos</a>
+                <a href="conceptos.html">Conceptos</a>
+                <a href="frases.html">Frases</a>
+                <a href="iniciodesesion.html">Unete a la comunidad</a>
+
+            </nav>
+     </header>
+
+    <main id="contenido-personajes">
+
+      <section id="pantalla-choose" class="avatar-pantalla">
+        <div class="avatar-panel avatar-panel--choose">
+          <button id="btn-choose-avatar" class="choose-avatar-btn" type="button">
+            <img src="imgs/chooseyouravatar.png" alt="Choose your avatar">
+          </button>
+        </div>
+      </section>
+
+      <section id="pantalla-select" class="avatar-pantalla oculto">
+        <div class="avatar-panel avatar-select-panel">
+          <img src="imgs/avatarselect.png" alt="" class="avatar-select-overlay">
+
+          <button id="carousel-flecha-izq" class="carousel-flecha carousel-flecha--izq" type="button" aria-label="Personaje anterior">
+            <img src="imgs/flecha-izquierda.png" alt="">
+          </button>
+
+          <div class="avatar-carousel" id="avatar-carousel">
+            <button class="avatar-card" data-nombre="Clancy">
+              <img src="imgs/Clancy.png" alt="Clancy">
+              <span>Clancy</span>
+            </button>
+            <button class="avatar-card" data-nombre="Anne">
+              <img src="imgs/anne-deer-dog.png" alt="Anne">
+              <span>Anne</span>
+            </button>
+            <button class="avatar-card" data-nombre="Bob">
+              <img src="imgs/bob.png" alt="Bob">
+              <span>Bob</span>
+            </button>
+            <button class="avatar-card" data-nombre="Darryl">
+              <img src="imgs/darryl.png" alt="Darryl">
+              <span>Darryl</span>
+            </button>
+            <button class="avatar-card" data-nombre="David">
+              <img src="imgs/david.png" alt="David">
+              <span>David</span>
+            </button>
+            <button class="avatar-card" data-nombre="Deneen">
+              <img src="imgs/deneen.png" alt="Deneen">
+              <span>Deneen</span>
+            </button>
+            <button class="avatar-card" data-nombre="Muerte">
+              <img src="imgs/muerte.png" alt="Muerte">
+              <span>Muerte</span>
+            </button>
+            <button class="avatar-card" data-nombre="Presidente Little">
+              <img src="imgs/presidente-little.png" alt="Presidente Little">
+              <span>Presidente Little</span>
+            </button>
+            <button class="avatar-card" data-nombre="Trudy">
+              <img src="imgs/trudy.png" alt="Trudy">
+              <span>Trudy</span>
+            </button>
+          </div>
+
+          <button id="carousel-flecha-der" class="carousel-flecha carousel-flecha--der" type="button" aria-label="Personaje siguiente">
+            <img src="imgs/flecha-derecha.png" alt="">
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="error-footer">
+          <a href="error2.html">
+            <img src="imgs/Error-footer.png" alt="botones de error" class="boton-error-footer">
+          </a>
+        </div>
+
+        <div class="texto-footer">
+          <p class="texto-footer">© 2025 Natalia Alcocer — Todos los derechos reservados</p>
+        </div>
+      </footer>
+
+<script src="js/menu-hamburguesa.js"></script>
+<script src="js/personajes.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+     <!-- Fuentes -->
+    <link rel="stylesheet" href="https://use.typekit.net/bpr4siw.css">
+    <link rel="stylesheet" href="css/fonts.css">
+     
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/menu-hamburguesa.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+<main>
+
+    <!-- Pantalla de inicio con fondo e imagen -->
+    <section id="pantalla-inicio" class="pantalla">
+        <img src="imgs/computadora-clancy.png" alt="computadora de Clancy" class="fondo-inicio" />
+        <button id="boton-comenzar" class="boton-comenzar">Comenzar</button>
+    </section>
+
+    <!-- Video de introducción -->
+    <section id="intro-video" class="pantalla oculto">
+        <video id="video" src="imgs/video-introduccion.mov" autoplay muted></video>
+       <button id="skipButton" class="skip-button">Saltar Video</button>  
+    </section>
+
+    <!-- Página de introducción -->
+    <section id="pagina-intro" class="pantalla oculto">
+
+        <header class="header">
+            <div class="hamburguesa">
+                <div class="container-menu-hamburguesa" onclick="myFunction(this); openNav()">
+                    <img src="imgs/menu-hamburguesa.png" alt="menu-hamburguesa" height="98px" width="187px"/>
+                </div>
+            </div>
+
+            <nav id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <p class="sidenav-label">SISTEMA // NAVEGACIÓN</p>
+                <a href="index.html">Inicio</a>
+                <a href="episodios.html">Episodios</a>
+                <a href="personajes.html">Personajes</a>
+                <a href="mundos.html">Mundos</a>
+                <a href="conceptos.html">Conceptos</a>
+                <a href="frases.html">Frases</a>
+                <a href="iniciodesesion.html">Unete a la comunidad</a>
+                
+            </nav>
+        </header>
+
+      
+<div class="container-intro">
+    <div class="container-del-container-intro">
+        <h1 class="texto-intro">THE MIDNIGHT GOSPEL</h1>
+         <h2 class="subtexto-intro">DUNCAN TRUSSELL Y PENDELTON WARD</h2>
+    </div>
+</div>
+
+
+<div class="trussell">
+ <div class="trussell-texto-container">
+    <h2 class="titulo-trussell">DUNCAN TRUSSELL</h2>
+    <p class="texto-trussell">
+      Comediante, podcaster y filósofo contemporáneo, Duncan es la mente detrás del <em>Duncan Trussell Family Hour</em>, un pódcast donde explora temas profundos como la muerte, la espiritualidad, el ego y la conciencia. 
+     Su voz y pensamiento dieron vida a Clancy, el protagonista de <em>The Midnight Gospel.  </em>
+    </p>
+  </div>
+
+  <div class="trussell-imagen">
+  
+</div>
+</div>
+
+<div class="ward">
+ <div class="ward-texto-container">
+    <h2 class="titulo-ward">PENDELTON WARD</h2>
+    <p class="texto-ward">
+      Creador de la aclamada serie <em>Adventure Time</em>, Pendleton es un animador y guionista conocido por construir mundos visuales intensamente creativos y emotivos. 
+     Su <em>colaboración con Trussell </em> permitió transformar conversaciones filosóficas reales en un universo animado lleno de color, caos y sentido existencial.
+    </p>
+  </div>
+
+  <div class="ward-imagen">
+  
+</div>
+</div>
+
+<div class="scroll-container-intro">
+  <div class="video-wrapper-intro">
+    <div id="video-container-intro">
+      <video id="video-intro" loop muted playsinline>
+        <source src="imgs/video-inicio.mov" type="video/quicktime">
+      </video>
+
+      <div class="video-overlay-intro">
+        <div class="caption-intro">01</div>
+        <div class="content-intro">
+          <h2>SE CENTRA EN CLANCY GILROY</h2>
+          <p>un "podcaster espacial" que usa un simulador de universos para viajar a mundos psicodélicos y entrevistar a seres sobre temas filosóficos y espirituales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    <div class="spacer"></div>
+
+</main>
+
+<footer id="footer" class="footer oculto">
+    <div class="error-footer">
+      <a href="error2.html">
+        <img src="imgs/Error-footer.png" alt="botones de error" class="boton-error-footer">
+      </a>
+    </div>
+  
+    <div class="texto-footer">
+      <p class="texto-footer">© 2025 Natalia Alcocer — Todos los derechos reservados</p>
+    </div>
+  </footer>
+<!-- GSAP + Plugins -->
+<script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.2/dist/CustomEase.min.js"></script>
+
+<!-- Lenis -->
+<script src="https://unpkg.com/@studio-freight/lenis"></script>
+<script src="js/pagina-intro.js"></script>
+
+<!-- Mis JS -->
+<script src="js/menu-hamburguesa.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+

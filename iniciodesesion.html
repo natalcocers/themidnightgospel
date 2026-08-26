@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de sesion</title>
+     <!-- Fuentes -->
+   <link rel="stylesheet" href="https://use.typekit.net/eoj2jqc.css">
+    <link rel="stylesheet" href="css/fonts.css">
+     
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/menu-hamburguesa.css" />
+    <link rel="stylesheet" href="css/formulario.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header class="header">
+            <div class="hamburguesa">
+                <div class="container-menu-hamburguesa" onclick="myFunction(this); openNav()">
+                    <img src="imgs/menu-hamburguesa.png" alt="menu-hamburguesa" height="98px" width="187px"/>
+                </div>
+            </div>
+
+            <nav id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <p class="sidenav-label">SISTEMA // NAVEGACIÓN</p>
+                <a href="index.html">Inicio</a>
+                <a href="episodios.html">Episodios</a>
+                <a href="personajes.html">Personajes</a>
+                <a href="mundos.html">Mundos</a>
+                <a href="conceptos.html">Conceptos</a>
+                <a href="frases.html">Frases</a>
+                <a href="iniciodesesion.html">Unete a la comunidad</a>
+                
+            </nav>
+     </header>
+
+     <body>
+        <!-- partial:index.partial.html -->
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Iniciar sesión</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label>
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="user" class="label">Usuario</label>
+                            <input id="user" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Contraseña</label>
+                            <input id="pass" type="password" class="input" data-type="password">
+                        </div>
+                        <div class="group">
+                            <input id="check" type="checkbox" class="check" checked>
+                            <label for="check"><span class="icon"></span> Mantenerme registrado</label>
+                        </div>
+                        <div class="group" id="boton-inicio-sesion">
+                            <input type="submit" class="button" value="Iniciar sesión">
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <a href="#forgot">Olvidaste contraseña?</a>
+                        </div>
+                    </div>
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="user" class="label">Usuario</label>
+                            <input id="user" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Contraseña</label>
+                            <input id="pass" type="password" class="input" data-type="password">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label"> Repite contraseña</label>
+                            <input id="pass" type="password" class="input" data-type="password">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Email</label>
+                            <input id="pass" type="text" class="input">
+                        </div>
+                        <div class="group" id="boton-inicio-sesion">
+                            <input type="submit" class="button" value="Registrarse">
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <label for="tab-1">Ya eres miembro?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+</body>
+   
+
+<footer id="footer" class="footer oculto">
+    <div class="error-footer">
+      <a href="error2.html">
+        <video src="imgs/Error-footer.png" alt="botones de error" class="boton-error-footer">
+      </a>
+    </div>
+  
+    <div class="texto-footer">
+      <p class="texto-footer">© 2025 Natalia Alcocer — Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+<script src="js/menu-hamburguesa.js"></script>
+<script src="js/formulario.js"></script>
+<script src="js/main.js"></script>
+</html>
+
+
+

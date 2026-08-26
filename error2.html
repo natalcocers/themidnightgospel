@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error 404</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>error</title>
+     <!-- Fuentes -->
+    <link rel="stylesheet" href="https://use.typekit.net/bpr4siw.css">
+    <link rel="stylesheet" href="css/fonts.css">
+     
+  <link rel="stylesheet" href="css/error.css" />
+</head>
+<body>
+
+ <!-- POP-UP INICIAL (con botón de salida) -->
+  <div id="popup-root" class="popup popup-root">
+    <div class="popup-bar">
+      <span class="popup-title">¡ERROR!</span>
+      <button class="popup-close">X</button>
+    </div>
+
+    <div class="popup-body">
+      <img src="imgs/virus-malvado.png" alt="virus malvado" class="popup-img1" />
+      <h3 class="popup-h3">NO ES BROMA</h3>
+      <p class="popup-p">GANASTE ALGO. Y ES GRATIS.</p>
+
+      <!-- Botón existente que ya tiene tu propio estilo -->
+      <div class="boton-click-aqui">
+        <a href="index.html">Click aquí</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANTILLA OCULTA QUE SE CLONARÁ (sin botón) -->
+  <div id="popup-template" class="popup popup-template oculto">
+    <div class="popup-bar">
+      <span class="popup-title2">¡ERROR!</span>
+      <button class="popup-close">X</button>
+    </div>
+
+    <div class="popup-body">
+      <img src="imgs/good.png" alt="virus malvado" class="popup-img2" />
+      <h4 class="popup-h4">NO ES UN VIRUS</h4>
+      <p class="popup-p2">LA SIMULACION HA SIDO DETENIDA</p>
+      <p class="popup-p3">CIERRE VENTANA</p>
+    </div>
+  </div>
+
+  <script src="js/error.js"></script>
+  <audio id="popup-sound" src="sounds/win95-popup.wav" preload="auto"></audio>
+</body>
+<!-- Sonido estilo Windows 95 (pon el .wav en /sounds/) -->
+</html>

@@ -1,0 +1,251 @@
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #C7579B, #D3705C,#C7579B);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+/* ---------- POP-UP BASE (Windows 95 style) ---------- */
+.popup {
+  width: 380px;
+  height: 450px;
+  background: #c0c0c0;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  position: absolute;
+  font-family: "MS Sans Serif", sans-serif;
+}
+
+.popup-bar {
+  background: linear-gradient( #007376, #78C5D5 );
+  color: #F1E1D0;
+  padding: 4px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+}
+
+.popup-title { 
+  font-family: 'Poppins', 'sans-serif'; 
+  -webkit-text-stroke: 2px #034244; 
+  font-size: 30px;
+  color: #F3D64D;
+ }
+
+/* .popup-title:hover { 
+  font-family: 'cc-pixel-arcade-display', 'sans-serif'; 
+  -webkit-text-stroke: 2px #45274d; 
+  font-size: 28px;
+  color: #C7579B;
+ } */
+
+ .popup-title2 { 
+  font-family: 'Poppins', 'sans-serif'; 
+  font-size: 30px;
+  color: #F1E1D0;
+ }
+
+ 
+.popup-close {
+  width: 35px; height: 35px;
+  border: 3px outset #45274d;
+  background: #C7579B;
+  font-weight: bold;
+   font-size: 25px;
+   color: #F1E1D0;
+  cursor: pointer;
+}
+
+.popup-close:hover { 
+  background:#D14B70; 
+  color:#fff; 
+  
+}
+
+.popup-body {
+  background:#433f46;
+  height: 362px;
+  border-top:2px solid #808080;
+  padding:16px;
+  text-align:center;
+}
+
+/* imagen popup principal */
+
+.popup-img1 {
+  width:180px; 
+  height:100px; 
+  object-fit:contain; 
+  margin-bottom:2px; }
+
+  /* imagen en otros pop ups */
+
+.popup-img2 {
+  width:200px; 
+  height:120px; 
+  object-fit:contain; 
+  margin-bottom:2px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup-body:hover .popup-img2 {
+  width:200px; 
+  height:120px;  
+  object-fit:contain; 
+  margin-bottom:2px;
+  content: url("../imgs/bad.png"); /* imagen que aparece al hacer hover */
+}
+
+
+
+.popup-h3 { 
+  font-family: 'cc-pixel-arcade-display', 'sans-serif'; 
+  -webkit-text-stroke: 1px #174A5B; 
+  font-size: 43px;
+  color: #78C5D5;
+  margin-top: 0; 
+  padding: 0;
+   line-height: 0.8; 
+}
+
+/* texto en otros pop ups que cambia */
+
+.popup-h4 {
+   color: transparent;        /* Oculta el texto original */
+   position: relative;
+   display: inline-block;
+   width: 100%;
+   text-align: center;
+   }
+
+.popup-h4::after {
+   content: "No es un virus";
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   top: 0;
+   width: max-content;
+   font-family: 'cc-pixel-arcade-display', 'sans-serif'; 
+   font-size: 35px;
+   color:  #E55D72;
+   -webkit-text-stroke:2px #DE2529; 
+   margin-top: 0; 
+   padding: 0; 
+   }
+
+.popup-h4:hover::after {
+  content: "Es un virus";
+   }   
+
+.popup-p  {
+   font-family: 'cc-pixel-arcade-display', 'sans-serif'; 
+  -webkit-text-stroke:1px #45274d; 
+   font-size: 30px;
+   color: #C7579B;
+   margin-top: 0; 
+   padding: 0;
+   line-height: 0.9; 
+  }
+
+  .popup-p2  {
+    font-family: 'cc-pixel-arcade-display', 'sans-serif'; 
+   -webkit-text-stroke:2px #174A5B; 
+   font-size: 30px;
+   color: #007376;
+   margin-top: 20px; 
+   padding: 0;
+   line-height: 1.2; 
+  }
+
+    .popup-p3  {
+   font-family: 'Orbitron', 'sans-serif'; 
+   font-size: 15px;
+   font-weight: bold;
+   color:#f1dde0;
+   margin-top: 20px; 
+   padding: 0;
+   line-height: 1.2; 
+  }
+
+
+
+
+/* ---------- VARIANTES DE COLOR ---------- */
+.popup-cyan    .popup-bar { 
+ background: linear-gradient( #081D48, #227E92 );
+}
+
+.popup-cyan    .popup-body{ 
+  background: linear-gradient( #c8d6da, #67a3b1 );
+}
+
+.popup-magenta .popup-bar {
+  background: linear-gradient( #653971, #DD80D3 );
+  }
+
+.popup-magenta .popup-body{ 
+  background: linear-gradient( #f1dcf5, #DD80D3);
+}
+
+.popup-green   .popup-bar { 
+  background: linear-gradient( #D3705C, #f0cc00 );
+}
+
+.popup-green   .popup-body{
+   background: linear-gradient( #ffe5bf, #df9485);
+  }
+
+/* ---------- UTILIDADES ---------- */
+.oculto { display:none !important; }
+
+.boton-click-aqui {
+  position: absolute;
+  height: 18px;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  padding: 20px 30px;
+  cursor: pointer;
+  font-family: 'cc-pixel-arcade-display', 'sans-serif'; 
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 15px #F3D64D;
+  background-color: #F3D64D;
+  z-index: 1;   /* Asegura que esté por encima */
+  display: flex;              /* CENTRADO VERTICAL */
+  align-items: center;        /* CENTRADO VERTICAL */
+  justify-content: center;    /* CENTRADO HORIZONTAL */
+  height: auto;
+}
+
+.boton-click-aqui a {
+  display: block;
+  font-family: 'cc-pixel-arcade-display', 'sans-serif';
+  color: #78C5D5;
+   -webkit-text-stroke: 2px #174A5B; 
+  font-size: 30px;
+  text-decoration: none;
+  width: 260px;
+}
+
+.boton-click-aqui a:hover {
+  display: block;
+  font-family: 'cc-pixel-arcade-display', 'sans-serif';
+  color: #c60f86;
+   -webkit-text-stroke: 2px #45274d ; 
+  font-size: 30px;
+  text-decoration: none;
+  width: 260px;
+}
+
+.boton-click-aqui:hover {
+  color: #78C5D5;
+  box-shadow: 0 0 25px 10px #c60f86;
+  font-family: 'cc-pixel-arcade-display', 'sans-serif';
+
+}

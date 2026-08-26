@@ -1,0 +1,166 @@
+
+/* hamburguesa */
+body {
+  background: #174A5B;
+  margin: 0;
+  padding: 0;
+}
+
+.container-menu-hamburguesa {
+    margin-top:5%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.container-menu-hamburguesa img {
+    transition: filter 0.3s ease;
+}
+
+.container-menu-hamburguesa:hover img {
+    filter: brightness(1.5);
+}
+
+.hamburguesa {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.container-menu-hamburguesa {
+cursor: pointer;
+}
+
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+
+/* right side menu — panel retro-tecnológico tipo terminal */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 50000;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    transition: width 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    padding-top: 70px;
+    background:
+      repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.18) 0px, rgba(0, 0, 0, 0.18) 1px, transparent 1px, transparent 3px),
+      linear-gradient(165deg, #0a2e38 0%, #007376 55%, #0a2e38 100%);
+    border-left: 3px solid #F3D64D;
+    box-shadow: -12px 0 45px rgba(243, 214, 77, 0.5), inset 0 0 60px rgba(0, 0, 0, 0.4);
+}
+
+/* banda de escaneo tipo CRT recorriendo el panel */
+.sidenav::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 25%;
+    background: linear-gradient(to bottom, transparent, rgba(243, 214, 77, 0.18), transparent);
+    animation: sidenavScan 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes sidenavScan {
+    0% { transform: translateY(-120%); }
+    100% { transform: translateY(500%); }
+}
+
+/* rótulo tipo terminal arriba de los links */
+.sidenav-label {
+    margin: 0 0 16px 32px;
+    padding-bottom: 10px;
+    width: calc(100% - 64px);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #78C5D5;
+    text-shadow: 0 0 8px rgba(120, 197, 213, 0.8);
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(120, 197, 213, 0.35);
+}
+
+.sidenav a {
+    padding: 10px 8px 10px 32px;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #F3D64D;
+    text-shadow: 0 0 6px rgba(243, 214, 77, 0.5);
+    display: block;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.sidenav a:hover, .sidenav a:focus {
+    color: #78C5D5;
+    text-shadow: 0 0 10px rgba(120, 197, 213, 0.9), 0 0 22px rgba(120, 197, 213, 0.5);
+}
+
+/* al abrirse, los links entran en cascada tipo "boot-up" */
+.sidenav.sidenav--open a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sidenav.sidenav--open a:nth-of-type(1) { transition-delay: 0s; }
+.sidenav.sidenav--open a:nth-of-type(2) { transition-delay: 0.08s; }
+.sidenav.sidenav--open a:nth-of-type(3) { transition-delay: 0.14s; }
+.sidenav.sidenav--open a:nth-of-type(4) { transition-delay: 0.2s; }
+.sidenav.sidenav--open a:nth-of-type(5) { transition-delay: 0.26s; }
+.sidenav.sidenav--open a:nth-of-type(6) { transition-delay: 0.32s; }
+.sidenav.sidenav--open a:nth-of-type(7) { transition-delay: 0.38s; }
+.sidenav.sidenav--open a:nth-of-type(8) { transition-delay: 0.44s; }
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #F3D64D;
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid #F3D64D;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.sidenav .closebtn:hover {
+    color: #F3D64D;
+    text-shadow: none;
+    transform: scale(1.1) rotate(90deg);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 1rem;}
+}

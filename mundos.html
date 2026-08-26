@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mundos</title>
+     <!-- Fuentes -->
+   <link rel="stylesheet" href="https://use.typekit.net/eoj2jqc.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/menu-hamburguesa.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/mundos.css" />
+</head>
+
+<body>
+    <div class="starfield" aria-hidden="true">
+        <div class="stars-layer stars-layer--far" id="starsFar"></div>
+        <div class="stars-layer stars-layer--mid" id="starsMid"></div>
+        <div class="stars-layer stars-layer--near" id="starsNear"></div>
+    </div>
+
+    <header class="header">
+            <div class="hamburguesa">
+                <div class="container-menu-hamburguesa" onclick="myFunction(this); openNav()">
+                    <img src="imgs/menu-hamburguesa.png" alt="menu-hamburguesa" height="98px" width="187px"/>
+                </div>
+            </div>
+
+            <nav id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <p class="sidenav-label">SISTEMA // NAVEGACIÓN</p>
+                <a href="index.html">Inicio</a>
+                <a href="episodios.html">Episodios</a>
+                <a href="personajes.html">Personajes</a>
+                <a href="mundos.html">Mundos</a>
+                <a href="conceptos.html">Conceptos</a>
+                <a href="frases.html">Frases</a>
+                <a href="iniciodesesion.html">Unete a la comunidad</a>
+
+            </nav>
+     </header>
+
+ <section class="mundos-intro"></section>
+
+ <div id="universos-grid">
+
+    <!-- Celda 1 -->
+    <div class="celda">
+      <div class="planeta1" alt="Mundo 1" data-target="overlay1"></div>
+    </div>
+
+    <!-- Celda 2 -->
+    <div class="celda">
+      <div class="planeta2" alt="Mundo 2" data-target="overlay2"></div>
+    </div>
+
+    <!-- Celda 3 -->
+    <div class="celda">
+      <div class="planeta3" alt="Mundo 3" data-target="overlay3"></div>
+    </div>
+
+    <!-- Celda 4 -->
+    <div class="celda">
+      <div class="planeta4" alt="Mundo 4" data-target="overlay4"></div>
+    </div>
+
+    <!-- Celda 5 -->
+  <div class="celda">
+      <div class="planeta5" alt="Mundo 5" data-target="overlay5"></div>
+    </div>
+
+    <!-- Celda 6 -->
+   <div class="celda">
+      <div class="planeta6" alt="Mundo 6" data-target="overlay6"></div>
+    </div>
+
+  </div>
+
+  <!-- OVERLAYS (uno por cada mundo) -->
+  <div id="overlay1" class="overlay">
+    <button class="close">&times;</button>
+    <div class="overlay__contenido">
+      <video src="imgs/Planeta1video.mp4" alt="Info Mundo 1" class="overlay__img"autoplay muted loop controls></video>
+      <div class="overlay__texto">
+        <h2>Lazo Cromatico</h2>
+        <p>Cinta multicolor suspendida en el vacío, sembrada de biocomputadoras “granja-simulador”. Arquitectura orgánica que palpita con luces neón y filamentos de datos</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay2" class="overlay">
+    <button class="close">&times;</button>
+    <div class="overlay__contenido">
+      <video src="imgs/Planeta2video.mp4" alt="Info Mundo 2" class="overlay__img"autoplay muted loop controls></video>
+      <div class="overlay__texto">
+        <h2>Tierra 4-169</h2>
+        <p>Planeta Tierra en pleno apocalipsis zombi: suburbios destruidos, pancartas antidroga y sangre sobre asfalto pop. </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay3" class="overlay">
+    <button class="close">&times;</button>
+    <div class="overlay__contenido">
+      <video src="imgs/Planeta3video.mp4" alt="Info Mundo 3" class="overlay__img"autoplay muted loop controls></video>
+      <div class="overlay__texto">
+        <h2>Clownplanet</h2>
+        <p>Ecosistema de bebés payaso y ciervos-perro; colores circo-pastel que contrastan con mataderos industriales y arañas parásitas. </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay4" class="overlay">
+    <button class="close">&times;</button>
+    <div class="overlay__contenido">
+      <video src="imgs/Planeta4video.mp4" alt="Info Mundo 4" class="overlay__img"autoplay muted loop controls></video>
+      <div class="overlay__texto">
+        <h2>Acream</h2>
+        <p>Orbe completamente inundado, ruinas sumergidas y barcos-gato navegando corrientes fluorescentes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay5" class="overlay">
+    <button class="close">&times;</button>
+    <div class="overlay__contenido">
+      <video src="imgs/Planeta5video.mp4" alt="Info Mundo 5" class="overlay__img"autoplay muted loop controls></video>
+      <div class="overlay__texto">
+        <h2>Mercuritaville</h2>
+        <p>Destino vacacional sugerido por el simulador: fusión de playa hedonista “Margaritaville” con misticismo de Mercurio/Hermes; un carnaval psicodélico de fiestas y alquimia. </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay6" class="overlay">
+    <button class="close">&times;</button>
+    <div class="overlay__contenido">
+      <video src="imgs/Planeta6video.mp4" alt="Info Mundo 6" class="overlay__img"autoplay muted loop controls></video>
+      <div class="overlay__texto">
+        <h2>Luna R3T8</h2>
+        <p>Satélite-prisión gris, laberinto vertical de celdas donde almas reinciden en bucles de muerte; nubes tóxicas y pilares de roca translúcida. </p>
+      </div>
+    </div>
+  </div>
+
+<footer id="footer" class="footer oculto">
+    <div class="error-footer">
+      <a href="error2.html">
+        <video src="imgs/Error-footer.png" alt="botones de error" class="boton-error-footer">
+      </a>
+    </div>
+
+    <div class="texto-footer">
+      <p class="texto-footer">© 2025 Natalia Alcocer — Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+<script src="js/menu-hamburguesa.js"></script>
+<script src="js/mundos.js"></script>
+</html>
