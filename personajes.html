@@ -50,9 +50,12 @@
         <div class="avatar-panel avatar-select-panel">
           <img src="imgs/avatarselect.png" alt="" class="avatar-select-overlay">
 
-          <button id="carousel-flecha-izq" class="carousel-flecha carousel-flecha--izq" type="button" aria-label="Personaje anterior">
-            <img src="imgs/flecha-izquierda.png" alt="">
-          </button>
+          <div id="avatar-nombre-wrap" class="avatar-nombre-wrap">
+            <p id="avatar-nombre-actual" class="avatar-nombre-actual"><span id="avatar-nombre-texto" class="avatar-nombre-texto"></span></p>
+            <button id="avatar-btn-select" class="avatar-btn-select" type="button">Select</button>
+          </div>
+
+          <button id="carousel-flecha-izq" class="carousel-flecha carousel-flecha--izq" type="button" aria-label="Personaje anterior"></button>
 
           <div class="avatar-carousel" id="avatar-carousel">
             <button class="avatar-card" data-nombre="Clancy">
@@ -93,9 +96,33 @@
             </button>
           </div>
 
-          <button id="carousel-flecha-der" class="carousel-flecha carousel-flecha--der" type="button" aria-label="Personaje siguiente">
-            <img src="imgs/flecha-derecha.png" alt="">
-          </button>
+          <button id="carousel-flecha-der" class="carousel-flecha carousel-flecha--der" type="button" aria-label="Personaje siguiente"></button>
+        </div>
+      </section>
+
+      <section id="pantalla-detalle" class="avatar-pantalla oculto">
+        <div class="avatar-panel detalle-panel">
+          <div class="detalle-col-texto">
+            <h2 id="detalle-nombre" class="detalle-nombre"></h2>
+            <p id="detalle-descripcion" class="detalle-descripcion"></p>
+
+            <div class="detalle-planeta">
+              <span class="detalle-planeta-label">Planeta</span>
+              <div class="detalle-planeta-fila">
+                <img src="imgs/Error-footer.png" alt="" class="detalle-error-logo">
+                <div class="detalle-planeta-texto">
+                  <h3 id="detalle-planeta-nombre"></h3>
+                  <p id="detalle-planeta-descripcion"></p>
+                </div>
+              </div>
+            </div>
+
+            <button id="btn-detalle-volver" class="detalle-volver" type="button">&larr; Volver al selector</button>
+          </div>
+
+          <div class="detalle-col-imagen">
+            <img id="detalle-imagen" class="detalle-imagen" src="" alt="">
+          </div>
         </div>
       </section>
 
