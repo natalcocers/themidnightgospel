@@ -65,10 +65,10 @@
 .avatar-panel {
   position: relative;
   width: 100%;
-  max-width: 1560px;
+  max-width: 1000px;
   padding: 70px 50px;
   box-sizing: border-box;
-  background: linear-gradient(to bottom, #D34F6F, #E47C5D, #F0994A, #E47C5D, #D34F6F);
+  background-image: linear-gradient(to bottom, rgba(211, 79, 111, 0.88), rgba(228, 124, 93, 0.88), rgba(240, 153, 74, 0.88), rgba(228, 124, 93, 0.88), rgba(211, 79, 111, 0.88));
   border: 3px solid #FFEAF7;
   clip-path: polygon(
     5% 0%, 95% 0%,
@@ -118,7 +118,6 @@
   aspect-ratio: 1440 / 1024;
   padding: 0;
   overflow: hidden;
-  background-image: linear-gradient(to bottom, rgba(211, 79, 111, 0.88), rgba(228, 124, 93, 0.88), rgba(240, 153, 74, 0.88), rgba(228, 124, 93, 0.88), rgba(211, 79, 111, 0.88));
 }
 
 .avatar-select-overlay {
@@ -152,7 +151,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  width: 460px;
+  width: 210px;
   padding: 0;
   opacity: 0;
   clip-path: inset(0 0 100% 0);
@@ -166,8 +165,8 @@
 }
 
 .avatar-card img {
-  width: 420px;
-  height: 420px;
+  width: 183px;
+  height: 183px;
   object-fit: contain;
   filter: drop-shadow(0 0 10px rgba(255, 79, 195, 0.5));
   transition: filter 0.3s ease, transform 0.3s ease;
@@ -198,7 +197,7 @@
   margin: 0;
   font-family: 'Orbitron', sans-serif;
   color: #FFF6D8;
-  font-size: 1.6rem;
+  font-size: 1.15rem;
   line-height: 1.15;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -276,6 +275,11 @@
 @keyframes avatarNombreCursor {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
+}
+
+@keyframes avatarFramePulso {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(94, 255, 242, 0.55)); }
+  50% { filter: drop-shadow(0 0 16px rgba(94, 255, 242, 0.95)) drop-shadow(0 0 28px rgba(94, 255, 242, 0.5)); }
 }
 
 .avatar-card:hover img,
@@ -387,6 +391,7 @@
 .detalle-panel {
   display: flex;
   gap: 40px;
+  min-height: 711px;
 }
 
 .detalle-col-texto {
@@ -464,6 +469,7 @@
 }
 
 .detalle-col-imagen {
+  position: relative;
   flex: 1 1 50%;
   min-height: 320px;
   display: flex;
@@ -489,9 +495,23 @@
   filter: drop-shadow(0 0 16px rgba(120, 197, 213, 0.5));
 }
 
+/* Marco holográfico encima del personaje en la pantalla de detalle,
+   ya con el personaje elegido tras pulsar "Select" */
+.detalle-imagen-marco {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(130%, 780px);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+  animation: avatarFramePulso 2.6s ease-in-out infinite;
+}
+
 @media (max-width: 900px) {
   .detalle-panel {
     flex-direction: column;
+    min-height: 0;
   }
   .detalle-col-imagen {
     order: -1;
@@ -527,4 +547,29 @@
     width: 16px;
     height: 22px;
   }
+  .aviso-movil {
+    display: block;
+  }
+}
+
+/* Aviso de "mejor en computadora": fijo en una esquina, solo en móvil */
+.aviso-movil {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 50;
+  max-width: 150px;
+  margin: 0;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  background: rgba(10, 13, 36, 0.8);
+  border: 1px solid rgba(255, 79, 195, 0.5);
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.6rem;
+  line-height: 1.3;
+  color: #FFF6D8;
+  text-align: right;
+  pointer-events: none;
 }

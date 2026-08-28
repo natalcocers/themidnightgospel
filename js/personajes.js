@@ -36,7 +36,7 @@ const personajesInfo = {
     planetaNombre: 'Button 78914',
     planetaDescripcion: '',
     planetaImagen: 'imgs/acream.png',
-    imagen: 'imgs/davidd.png',
+    imagen: 'imgs/david.png',
   },
   Deneen: {
     descripcion: 'Recorre junto a Clancy todo el ciclo biológico —desde el nacimiento y la crianza hasta la vejez y la disolución— mientras discute la naturaleza de la presencia y la pérdida. Su historia es una lección sobre el amor sin apego, la transformación del dolor en sabiduría y el arte de dejar ir en el instante presente.',
@@ -47,8 +47,8 @@ const personajesInfo = {
   },
   Muerte: {
     descripcion: 'Personificada como una figura serena, acogedora y maternal, comparte una visión donde la finitud no es un castigo, sino la condición que le da sentido a la existencia. Su mensaje desmonta el tabú occidental sobre la muerte, invitando a ver el final de la vida como una transición natural que exige presencia y entrega.',
-    planetaNombre: 'Luna R3T8',
-    planetaDescripcion: 'Satélite-prisión gris, laberinto vertical de celdas donde almas reinciden en bucles de muerte; nubes tóxicas y pilares de roca translúcida.',
+    planetaNombre: 'Blankball',
+    planetaDescripcion: '',
     planetaImagen: 'imgs/planetadavid.png',
     imagen: 'imgs/muerte.png',
   },
@@ -64,7 +64,7 @@ const personajesInfo = {
     planetaNombre: 'Mercuritaville',
     planetaDescripcion: 'Destino vacacional sugerido por el simulador: fusión de playa hedonista "Margaritaville" con misticismo de Mercurio/Hermes; un carnaval psicodélico de fiestas y alquimia.',
     planetaImagen: 'imgs/mercuritaville.png',
-    imagen: 'imgs/trudyy.png',
+    imagen: 'imgs/trudy.png',
   },
 };
 
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function layout() {
-    const gapRatio = window.innerWidth <= 720 ? 0.85 : 0.6;
+    const gapRatio = window.innerWidth <= 720 ? 0.85 : 0.42;
     const gap = carousel.clientWidth * gapRatio;
 
     cards.forEach((card, i) => {
