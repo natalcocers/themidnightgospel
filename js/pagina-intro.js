@@ -150,17 +150,18 @@ tl.to(
     0.45
   );
 
-// Animación "tecnológica" de aparición de las tarjetas de los creadores al hacer scroll
+// Animación de "pantalla encendiéndose" (estilo CRT) para las tarjetas de los creadores al hacer scroll
 gsap.utils.toArray(".trussell, .ward").forEach((card) => {
   const scanBar = document.createElement("div");
   scanBar.className = "scan-bar";
   card.appendChild(scanBar);
 
   gsap.set(card, {
+    transformOrigin: "center center",
     opacity: 0,
-    y: 80,
-    scale: 0.92,
-    filter: "blur(10px)"
+    scaleY: 0.015,
+    scaleX: 1.06,
+    filter: "brightness(3.5) blur(3px)"
   });
 
   const cardTl = gsap.timeline({
@@ -172,19 +173,29 @@ gsap.utils.toArray(".trussell, .ward").forEach((card) => {
   });
 
   cardTl
+    // la "pantalla" se enciende: una línea horizontal se expande de golpe
     .to(card, {
       opacity: 1,
-      y: 0,
-      scale: 1,
-      filter: "blur(0px)",
-      duration: 0.8,
-      ease: "power3.out"
+      scaleY: 1,
+      scaleX: 1,
+      duration: 0.45,
+      ease: "power4.out"
     })
+    // destello de encendido tipo CRT que se apaga hasta el brillo normal
+    .to(
+      card,
+      {
+        filter: "brightness(1) blur(0px)",
+        duration: 0.4,
+        ease: "power2.out"
+      },
+      "<0.05"
+    )
     .fromTo(
       scanBar,
       { left: "-30%" },
       { left: "130%", duration: 0.9, ease: "power2.inOut" },
-      "<"
+      "-=0.25"
     )
     // parpadeo tipo glitch al final de la revelación
     .to(card, { opacity: 0.55, duration: 0.05 })

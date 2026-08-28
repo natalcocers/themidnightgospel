@@ -2,57 +2,68 @@
    (mismos nombres/textos que en mundos.html) e imagen alterna a la del carrusel */
 const personajesInfo = {
   Clancy: {
+    nombreCompleto: 'Clancy Gilroy',
     descripcion: 'Es un "spacecaster" que utiliza un simulador de universos para viajar a diferentes mundos y entrevistar a sus habitantes sobre temas existenciales. Su búsqueda constante de conocimiento lo lleva a cuestionar la naturaleza de la realidad y su propio propósito.',
     planetaNombre: 'Lazo Cromático',
-    planetaDescripcion: 'Cinta multicolor suspendida en el vacío, sembrada de biocomputadoras "granja-simulador". Arquitectura orgánica que palpita con luces neón y filamentos de datos.',
+    planetaDescripcion: 'Una dimensión donde se encuentran los cultivadores de simulaciones.',
+    planetaImagen: 'imgs/lazocromatico.png',
     imagen: 'imgs/Clancy.png',
   },
   Anne: {
-    descripcion: 'Habitante de Clownplanet con forma de ciervo-perro, mezcla de ternura infantil y crudeza circense. Acompaña a Clancy en sus travesías y con humor absurdo pone en palabras los miedos que todos evitamos nombrar.',
+    descripcion: 'Es una figura sabia que acompaña a Clancy en una conversación profunda sobre la muerte y el perdón mientras se dirigen a un matadero. Destaca su serenidad y comprensión de la mortalidad, ofreciéndole a los espectadores una visión reconfortante sobre el ciclo de vida.',
     planetaNombre: 'Clownplanet',
     planetaDescripcion: 'Ecosistema de bebés payaso y ciervos-perro; colores circo-pastel que contrastan con mataderos industriales y arañas parásitas.',
-    imagen: 'imgs/anne.png',
+    planetaImagen: 'imgs/clownplanet.png',
+    imagen: 'imgs/annedeerdog.png',
   },
   Bob: {
-    descripcion: 'Payaso de mirada cansada que habita Clownplanet y esconde una sabiduría inesperada bajo el maquillaje. Su presencia recuerda que la comedia y el dolor pueden convivir en un mismo cuerpo.',
-    planetaNombre: 'Clownplanet',
-    planetaDescripcion: 'Ecosistema de bebés payaso y ciervos-perro; colores circo-pastel que contrastan con mataderos industriales y arañas parásitas.',
+    descripcion: 'Prisionero en un bucle temporal de muerte y resurrección dentro de una prisión existencial, reflexiona sobre el sufrimiento, el karma y el perdón. Su experiencia ilustra cómo la liberación mental no depende del entorno físico, sino de romper el apego al ego y comprender la compasión hacia uno mismo.',
+    planetaNombre: 'Luna R3T8',
+    planetaDescripcion: 'Satélite-prisión gris, laberinto vertical de celdas donde almas reinciden en bucles de muerte; nubes tóxicas y pilares de roca translúcida.',
+    planetaImagen: 'imgs/luna.png',
     imagen: 'imgs/bob.png',
   },
   Darryl: {
-    descripcion: 'Ciervo-perro de Clownplanet, compañero de Bob y Anne en un mundo donde la fiesta y la masacre conviven a la vuelta de la esquina. Su tono relajado contrasta con la intensidad del entorno que habita.',
-    planetaNombre: 'Clownplanet',
-    planetaDescripcion: 'Ecosistema de bebés payaso y ciervos-perro; colores circo-pastel que contrastan con mataderos industriales y arañas parásitas.',
+    nombreCompleto: 'Darryl the Fish',
+    descripcion: 'Encarna al neófito en las artes ocultas que desmitifica la magia ceremonial, la meditación y la cábala. Comparte su transición de la fascinación superficial por el poder esotérico hacia la comprensión de la verdadera voluntad, el dominio de la mente y la superación del miedo a la muerte.',
+    planetaNombre: 'Acream',
+    planetaDescripcion: 'Orbe completamente inundado, ruinas sumergidas y barcos-gato navegando corrientes fluorescentes.',
+    planetaImagen: 'imgs/acream.png',
     imagen: 'imgs/darryl.png',
   },
   David: {
-    descripcion: 'Ave humanoide que habita Luna R3T8, el satélite-prisión donde las almas repiten sus ciclos de muerte. Observa el ir y venir de los reclusos con la calma de quien ya entendió que todo, tarde o temprano, vuelve a empezar.',
-    planetaNombre: 'Luna R3T8',
-    planetaDescripcion: 'Satélite-prisión gris, laberinto vertical de celdas donde almas reinciden en bucles de muerte; nubes tóxicas y pilares de roca translúcida.',
+    descripcion: 'Encarna al maestro de meditación y guía espiritual de la tradición budista. Comparte su aprendizaje sobre la disciplina de la mente, el concepto de Chögyam Trungpa, la superación de las distracciones del ego y cómo la práctica constante permite estar presente incluso cuando todo a tu alrededor cae en el caos.',
+    planetaNombre: 'Button 78914',
+    planetaDescripcion: '',
+    planetaImagen: 'imgs/acream.png',
     imagen: 'imgs/davidd.png',
   },
   Deneen: {
-    descripcion: 'Otra habitante alada de Luna R3T8, cercana a David, que recorre los pasillos grises de la prisión-satélite con una calidez que contrasta con el paisaje tóxico que la rodea.',
-    planetaNombre: 'Luna R3T8',
-    planetaDescripcion: 'Satélite-prisión gris, laberinto vertical de celdas donde almas reinciden en bucles de muerte; nubes tóxicas y pilares de roca translúcida.',
-    imagen: 'imgs/deneenn.png',
+    descripcion: 'Recorre junto a Clancy todo el ciclo biológico —desde el nacimiento y la crianza hasta la vejez y la disolución— mientras discute la naturaleza de la presencia y la pérdida. Su historia es una lección sobre el amor sin apego, la transformación del dolor en sabiduría y el arte de dejar ir en el instante presente.',
+    planetaNombre: 'Unknown',
+    planetaDescripcion: '',
+    planetaImagen: 'imgs/unknown.png',
+    imagen: 'imgs/deneen.png',
   },
   Muerte: {
-    descripcion: 'La Muerte misma, guadaña en mano, encargada de custodiar los bucles de Luna R3T8. Más que un final, representa el umbral: la transición que la serie invita a mirar sin miedo.',
+    descripcion: 'Personificada como una figura serena, acogedora y maternal, comparte una visión donde la finitud no es un castigo, sino la condición que le da sentido a la existencia. Su mensaje desmonta el tabú occidental sobre la muerte, invitando a ver el final de la vida como una transición natural que exige presencia y entrega.',
     planetaNombre: 'Luna R3T8',
     planetaDescripcion: 'Satélite-prisión gris, laberinto vertical de celdas donde almas reinciden en bucles de muerte; nubes tóxicas y pilares de roca translúcida.',
+    planetaImagen: 'imgs/planetadavid.png',
     imagen: 'imgs/muerte.png',
   },
   'Presidente Little': {
-    descripcion: 'Gobierna Luna R3T8 desde un despacho de protocolos absurdos, decidiendo el destino de las almas presas. Su figura autoritaria oculta un miedo propio a aquello que administra.',
-    planetaNombre: 'Luna R3T8',
-    planetaDescripcion: 'Satélite-prisión gris, laberinto vertical de celdas donde almas reinciden en bucles de muerte; nubes tóxicas y pilares de roca translúcida.',
+    descripcion: 'Líder de un mundo apocalíptico infestado por zombis. Mantiene una actitud estoica y reflexiva. Discute abiertamente sobre el uso de drogas y meditación mostrando una perspectiva contemplativa sobre estos temas.',
+    planetaNombre: 'Tierra 4-169',
+    planetaDescripcion: 'Planeta Tierra en pleno apocalipsis zombi: suburbios destruidos, pancartas antidroga y sangre sobre asfalto pop.',
+    planetaImagen: 'imgs/planetalittle.png',
     imagen: 'imgs/presidente-little.png',
   },
   Trudy: {
-    descripcion: 'Ciervo-perro de Clownplanet que encuentra calma en medio del caos circense. Su forma de hablar despacio invita a Clancy a bajar el ritmo y simplemente escuchar.',
-    planetaNombre: 'Clownplanet',
-    planetaDescripcion: 'Ecosistema de bebés payaso y ciervos-perro; colores circo-pastel que contrastan con mataderos industriales y arañas parásitas.',
+    descripcion: 'Enfrenta una búsqueda de venganza en un mundo en ruinas mientras expone cómo atravesar el duelo, la pérdida y el dolor emocional. Su viaje no busca aniquilar el sufrimiento, sino integrarlo para transformarlo en una forma de amor incondicional y aceptación de la impermanencia.',
+    planetaNombre: 'Mercuritaville',
+    planetaDescripcion: 'Destino vacacional sugerido por el simulador: fusión de playa hedonista "Margaritaville" con misticismo de Mercurio/Hermes; un carnaval psicodélico de fiestas y alquimia.',
+    planetaImagen: 'imgs/mercuritaville.png',
     imagen: 'imgs/trudyy.png',
   },
 };
@@ -91,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const detalleDescripcion = document.getElementById('detalle-descripcion');
   const detallePlanetaNombre = document.getElementById('detalle-planeta-nombre');
   const detallePlanetaDescripcion = document.getElementById('detalle-planeta-descripcion');
+  const detallePlanetaImagen = document.getElementById('detalle-planeta-imagen');
   const detalleImagen = document.getElementById('detalle-imagen');
   const total = cards.length;
 
@@ -177,10 +189,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btnSelect._timeout = setTimeout(() => btnSelect.classList.remove('avatar-btn-select--activo'), 900);
 
     const info = personajesInfo[nombre] || {};
-    detalleNombre.textContent = nombre;
+    detalleNombre.textContent = info.nombreCompleto || nombre;
     detalleDescripcion.textContent = info.descripcion || '';
     detallePlanetaNombre.textContent = info.planetaNombre || '';
     detallePlanetaDescripcion.textContent = info.planetaDescripcion || '';
+    detallePlanetaImagen.src = info.planetaImagen || 'imgs/clownplanet.png';
+    detallePlanetaImagen.alt = info.planetaNombre || '';
     detalleImagen.src = info.imagen || '';
     detalleImagen.alt = nombre;
 
